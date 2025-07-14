@@ -8,6 +8,9 @@ Run the development server:
 
 cd brandandbrandz
 
+//To install npm packages
+npm install or npm i
+
 ```bash
 npm run dev
 # or
