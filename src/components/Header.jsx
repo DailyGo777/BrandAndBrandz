@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,56 +13,56 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="font-bruno text-[#4A6893] text-4xl">B&B</h1>
+            <Link href={"/"} className="font-bruno text-[#4A6893] text-4xl">B&B</Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="font-carlito text-2xl text-[#4A6893] font-bold hover:text-bb-blue transition-colors"
+            <Link
+              href={"/"}
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Home
-            </a>
-            <a
-              href="#about"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+            </Link>
+            <Link
+              href={"/"}
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               About
-            </a>
+            </Link>
             <a
               href="#services"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Services
             </a>
             <a
               href="#work"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Work
             </a>
             <a
               href="#clients"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Clients
             </a>
             <a
               href="#team"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Our Team
             </a>
             <a
               href="#faq"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               FAQ
             </a>
-            <button className="bg-[#4A6893] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all">
+            <Link href={"contact"} className="bg-[#4A6893] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all">
               Contact Us
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -79,49 +80,49 @@ export default function Header() {
             <nav className="flex flex-col space-y-4">
               <a
                 href="#home"
-                className="font-carlito text-xl text-[#4A6893] font-bold hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#4A6893] font-bold hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#about"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a
                 href="#services"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
               <a
                 href="#work"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Work
               </a>
               <a
                 href="#clients"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Clients
               </a>
               <a
                 href="#team"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Our Team
               </a>
               <a
                 href="#faq"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-bb-blue transition-colors"
+                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ
