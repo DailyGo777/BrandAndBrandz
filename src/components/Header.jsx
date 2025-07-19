@@ -127,9 +127,9 @@ export default function Header() {
               >
                 FAQ
               </a>
-              <button className="bg-[#4A6893] text-white px-4 py-3 rounded-xl font-carlito text-xl font-bold hover:bg-opacity-90 transition-all w-fit">
+              <Link href={"contact"} className="bg-[#4A6893] text-white px-4 py-3 rounded-xl font-carlito text-xl font-bold hover:bg-opacity-90 transition-all w-fit">
                 Contact Us
-              </button>
+              </Link>
             </nav>
           </div>
         )}

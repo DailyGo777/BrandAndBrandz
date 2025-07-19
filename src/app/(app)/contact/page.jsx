@@ -1,31 +1,52 @@
-'use client'
+"use client";
 
 import { ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { contactFormSchema } from "@/utils/schemaValidation";
+
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    businessEmail: "",
-    companyName: "",
-    phoneNumber: "",
-    helpMessage: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(contactFormSchema),
   });
 
-  const handleInputChange = () => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+  const onSubmit = async (data) => {
+    try {
+      await axios.post("http://localhost:8080/api/contacts", data);
+      toast.success("Scheduled meeting Successfully!", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        className: "bg-[#4A6893] text-[#030303] font-semibold"
+      });
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        className: "bg-red-500 text-[#030303] font-semibold"
+      });
+    }
+    reset();
   };
 
   return (
@@ -51,125 +72,110 @@ export default function Contact() {
               <h2 className="font-roboto text-2xl font-bold text-[#030303] mb-8">
                 Get in Touch — Brand & Brandz
               </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                {/* First + Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label
-                      htmlFor="firstName"
-                      className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                    >
+                    <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                       First Name *
                     </label>
                     <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
+                      {...register("firstName")}
                       placeholder="John"
                       className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
-                      required
                     />
+                    {errors.firstName && (
+                      <p className="text-red-500 text-sm">
+                        {errors.firstName.message}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <label
-                      htmlFor="lastName"
-                      className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                    >
+                    <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                       Last Name *
                     </label>
                     <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
+                      {...register("lastName")}
                       placeholder="Doe"
                       className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
-                      required
                     />
+                    {errors.lastName && (
+                      <p className="text-red-500 text-sm">
+                        {errors.lastName.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
+                {/* Business Email */}
                 <div>
-                  <label
-                    htmlFor="businessEmail"
-                    className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                  >
+                  <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                     Business Email *
                   </label>
                   <input
                     type="email"
-                    id="businessEmail"
-                    name="businessEmail"
-                    value={formData.businessEmail}
-                    onChange={handleInputChange}
-                    placeholder="Shivu@company.com"
+                    {...register("businessEmail")}
+                    placeholder="shivu@company.com"
                     className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
-                    required
                   />
+                  {errors.businessEmail && (
+                    <p className="text-red-500 text-sm">
+                      {errors.businessEmail.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Company Name */}
                 <div>
-                  <label
-                    htmlFor="companyName"
-                    className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                  >
+                  <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                     Company Name *
                   </label>
                   <input
-                    type="text"
-                    id="companyName"
-                    name="companyName"
-                    value={formData.companyName}
-                    onChange={handleInputChange}
+                    {...register("companyName")}
                     placeholder="Your Company Name"
                     className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
-                    required
                   />
+                  {errors.companyName && (
+                    <p className="text-red-500 text-sm">
+                      {errors.companyName.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Phone Number */}
                 <div>
-                  <label
-                    htmlFor="phoneNumber"
-                    className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                  >
+                  <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                     Phone Number
                   </label>
                   <input
-                    type="tel"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleInputChange}
+                    {...register("phoneNumber")}
                     placeholder="+91 123-45678"
                     className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
                   />
                 </div>
 
+                {/* Help Message */}
                 <div>
-                  <label
-                    htmlFor="helpMessage"
-                    className="block font-roboto text-sm font-semibold text-[#030303] mb-2"
-                  >
+                  <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
                     How can we help? *
                   </label>
                   <textarea
-                    id="helpMessage"
-                    name="helpMessage"
-                    value={formData.helpMessage}
-                    onChange={handleInputChange}
-                    placeholder="Tell us about your IT challenges and objectives..."
                     rows={4}
-                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent resize-vertical"
-                    required
+                    {...register("message")}
+                    placeholder="Tell us about your IT challenges and objectives..."
+                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
                   />
+                  {errors.message && (
+                    <p className="text-red-500 text-sm">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#4A6893] text-white px-6 py-3 rounded-md font-roboto text-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center gap-4"
+                  className="w-full bg-[#4A6893] text-white px-6 py-3 rounded-md font-roboto text-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center gap-4 cursor-pointer"
                 >
                   Schedule Meeting
                   <ArrowRight size={16} />
