@@ -22,7 +22,7 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:8080/api/contacts", data);
+      await axios.post("https://brandandbrandz-backend.onrender.com/api/contacts", data);
       toast.success("Scheduled meeting Successfully!", {
         position: "bottom-left",
         autoClose: 3000,

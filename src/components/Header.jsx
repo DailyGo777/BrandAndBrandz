@@ -3,6 +3,8 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import bandbLogo from '../../public/BrandAndBrandz_Logo.svg'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,8 +14,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 lg:px-20">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href={"/"} className="font-bruno text-[#4A6893] text-4xl">B&B</Link>
+          <div className="flex items-center w-25 h-25 lg:w-50 lg:h-50">
+            <Link href={"/"}>
+            <Image src={bandbLogo} alt="bandblogo" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,28 +41,10 @@ export default function Header() {
               Services
             </a>
             <a
-              href="#work"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-            >
-              Work
-            </a>
-            <a
               href="#clients"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
             >
               Clients
-            </a>
-            <a
-              href="#team"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-            >
-              Our Team
-            </a>
-            <a
-              href="#faq"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-            >
-              FAQ
             </a>
             <Link href={"contact"} className="bg-[#4A6893] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all">
               Contact Us
@@ -100,32 +86,11 @@ export default function Header() {
                 Services
               </a>
               <a
-                href="#work"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Work
-              </a>
-              <a
                 href="#clients"
                 className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Clients
-              </a>
-              <a
-                href="#team"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Our Team
-              </a>
-              <a
-                href="#faq"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#4A6893] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
               </a>
               <Link href={"contact"} className="bg-[#4A6893] text-white px-4 py-3 rounded-xl font-carlito text-xl font-bold hover:bg-opacity-90 transition-all w-fit">
                 Contact Us

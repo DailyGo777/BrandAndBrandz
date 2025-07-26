@@ -51,7 +51,7 @@ const Review = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, carouselItems.length]);
