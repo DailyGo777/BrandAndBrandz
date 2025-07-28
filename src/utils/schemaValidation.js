@@ -8,6 +8,6 @@ export const contactFormSchema = yup.object().shape({
     .email("Invalid email")
     .required("Email is required"),
   companyName: yup.string().required("Company name is required"),
-  phoneNumber: yup.string().optional(),
+  phoneNumber: yup.string().required("Mobile Number is required"),
   message: yup.string().required("Message is required"),
 });

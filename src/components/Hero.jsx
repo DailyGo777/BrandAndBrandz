@@ -8,17 +8,17 @@ const Hero = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 text-center">
         {/* Content - 70% */}
         <div className="w-full lg:w-[70%] flex flex-col justify-center items-center gap-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A6893]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#005A98]">
             Your Strategic Growth Partner in Premium Marketing
           </h1>
           <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-black">
             We don’t just run campaigns — we help your business grow.
           </h3>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-6 py-2 bg-[#4A6893] text-white text-lg font-bold rounded-md">
+            <button className="px-6 py-2 bg-[#005A98] text-white text-lg font-bold rounded-md">
               Let’s Elevate Your Brand
             </button>
-            <button className="px-6 py-2 border border-[#4A6893] text-[#4A6893] text-lg font-bold rounded-md">
+            <button className="px-6 py-2 border border-[#005A98] text-[#005A98] text-lg font-bold rounded-md">
               Our Services
             </button>
           </div>
@@ -37,7 +37,7 @@ const Hero = () => {
             cx="300"
             cy="300"
             r="200"
-            stroke="#4A6893"
+            stroke="#005A98"
             strokeWidth="6"
             fill="none"
           />
@@ -45,7 +45,7 @@ const Hero = () => {
             cx="300"
             cy="300"
             r="160"
-            stroke="#4A6893"
+            stroke="#005A98"
             strokeWidth="6"
             fill="none"
           />
@@ -53,7 +53,7 @@ const Hero = () => {
             cx="300"
             cy="300"
             r="120"
-            stroke="#4A6893"
+            stroke="#005A98"
             strokeWidth="6"
             fill="none"
           />

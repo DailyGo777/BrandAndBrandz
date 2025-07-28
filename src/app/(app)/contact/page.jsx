@@ -31,7 +31,7 @@ export default function Contact() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        className: "bg-[#4A6893] text-[#030303] font-semibold"
+        className: "bg-[#005A98] text-[#030303] font-semibold"
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +57,7 @@ export default function Contact() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 lg:px-20">
           <div className="text-center mb-16">
-            <h1 className="font-roboto text-4xl lg:text-5xl font-bold text-[#4A6893] mb-6">
+            <h1 className="font-roboto text-4xl lg:text-5xl font-bold text-[#005A98] mb-6">
               Ready to Elevate Your Brand?
             </h1>
             <p className="font-roboto text-lg lg:text-xl text-[#4B4848] max-w-4xl mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="flex flex-col justify-center items-center gap-y-16">
             <div className="bg-white rounded-lg shadow-2xl p-8">
               <h2 className="font-roboto text-2xl font-bold text-[#030303] mb-8">
                 Get in Touch — Brand & Brandz
@@ -82,7 +82,7 @@ export default function Contact() {
                     <input
                       {...register("firstName")}
                       placeholder="John"
-                      className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                      className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                     />
                     {errors.firstName && (
                       <p className="text-red-500 text-sm">
@@ -97,7 +97,7 @@ export default function Contact() {
                     <input
                       {...register("lastName")}
                       placeholder="Doe"
-                      className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                      className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                     />
                     {errors.lastName && (
                       <p className="text-red-500 text-sm">
@@ -116,7 +116,7 @@ export default function Contact() {
                     type="email"
                     {...register("businessEmail")}
                     placeholder="shivu@company.com"
-                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                   />
                   {errors.businessEmail && (
                     <p className="text-red-500 text-sm">
@@ -133,7 +133,7 @@ export default function Contact() {
                   <input
                     {...register("companyName")}
                     placeholder="Your Company Name"
-                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                   />
                   {errors.companyName && (
                     <p className="text-red-500 text-sm">
@@ -145,13 +145,18 @@ export default function Contact() {
                 {/* Phone Number */}
                 <div>
                   <label className="block font-roboto text-sm font-semibold text-[#030303] mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     {...register("phoneNumber")}
                     placeholder="+91 123-45678"
-                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                   />
+                   {errors.phoneNumber && (
+                    <p className="text-red-500 text-sm">
+                      {errors.phoneNumber.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* Help Message */}
@@ -163,7 +168,7 @@ export default function Contact() {
                     rows={4}
                     {...register("message")}
                     placeholder="Tell us about your IT challenges and objectives..."
-                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4A6893] focus:border-transparent"
+                    className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                   />
                   {errors.message && (
                     <p className="text-red-500 text-sm">
@@ -175,7 +180,7 @@ export default function Contact() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#4A6893] text-white px-6 py-3 rounded-md font-roboto text-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center gap-4 cursor-pointer"
+                  className="w-full bg-[#005A98] text-white px-6 py-3 rounded-md font-roboto text-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center gap-4 cursor-pointer"
                 >
                   Schedule Meeting
                   <ArrowRight size={16} />
@@ -183,77 +188,27 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* Contact Information */}
-            <div>
-              <h2 className="font-roboto text-3xl font-bold text-black mb-6">
-                Let's Connect
+         {/* Google Maps Location */}
+            <div className="w-full">
+              <h2 className="font-roboto text-3xl font-bold text-[#005A98] mb-6 text-center">
+                Find Us Here
               </h2>
-              <p className="font-roboto text-lg text-[#4B4848] mb-12 leading-relaxed">
-                Our enterprise IT specialists are ready to help you solve
-                complex technology challenges and accelerate your business
-                growth.
+              <p className="font-roboto text-lg text-[#4B4848] mb-8 leading-relaxed text-center">
+                Visit our office or get direction. We’re centrally located for your convenience.
               </p>
 
-              <div className="space-y-10">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4A6893] rounded-2xl p-4 flex-shrink-0">
-                    <Phone size={28} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto text-lg font-bold text-black mb-1">
-                      Phone
-                    </h3>
-                    <p className="font-roboto text-lg text-[#4B4848]">
-                      9353857575
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4A6893] rounded-2xl p-4 flex-shrink-0">
-                    <Mail size={28} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto text-lg font-bold text-black mb-1">
-                      Email
-                    </h3>
-                    <p className="font-roboto text-lg text-[#4B4848]">
-                      sales@B&B.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4A6893] rounded-2xl p-4 flex-shrink-0">
-                    <MapPin size={28} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto text-lg font-bold text-black mb-1">
-                      Office
-                    </h3>
-                    <p className="font-roboto text-sm text-[#4B4848] leading-relaxed">
-                      #304,Medi Mallsandsra,Hoskote
-                      <br />
-                      Taluk, Bengaluru-560067
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4A6893] rounded-2xl p-4 flex-shrink-0">
-                    <Clock size={28} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto text-lg font-bold text-black mb-1">
-                      Business Hours
-                    </h3>
-                    <p className="font-roboto text-lg text-[#4B4848] leading-relaxed">
-                      Monday - Friday: 8:00 AM - 6:00 PM
-                      <br />
-                      24/7 Emergency Support Available
-                    </p>
-                  </div>
-                </div>
+              {/* Google Maps Embed */}
+               <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1!2d77.7655067!3d12.9844467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fd5dc557937%3A0xea0c5cc98b0272e5!2sDaily%20Go%20-%20Events%20and%20Manpower%20Services!5e0!3m2!1sen!2sin!4v1647845123456!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Brand & Brandz Office Location"
+                ></iframe>
               </div>
             </div>
           </div>

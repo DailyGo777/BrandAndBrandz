@@ -17,22 +17,22 @@ const ChooseUs = () => {
     {
       title: "Growth-Driven Execution",
       description: "Every campaign is built to deliver ROI and scale.",
-      icon: <Rocket size={40} color="#496791" />,
+      icon: <Rocket size={40} color="#005A98" />,
     },
     {
       title: "Full-Funnel Solutions",
       description: "From brand awareness to conversion we cover it all.",
-      icon: <Video size={40} color="#496791" />,
+      icon: <Video size={40} color="#005A98" />,
     },
     {
       title: "Deep Market Understanding",
       description: "Industry insights + audience analysis = smarter moves.",
-      icon: <BrainCog size={40} color="#496791" />,
+      icon: <BrainCog size={40} color="#005A98" />,
     },
     {
       title: "Automation That Works",
       description: "Save times, boost efficiency with AI driven workflows.",
-      icon: <CalendarSync size={40} color="#496791" />,
+      icon: <CalendarSync size={40} color="#005A98" />,
     },
   ];
 
@@ -58,7 +58,7 @@ const ChooseUs = () => {
     <section className="pb-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 lg:px-20">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#496791] mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#005A98] mb-6">
             Why Brands Choose Brand & Brandz
           </h2>
           <p className="text-2xl lg:text-4xl text-gray-800 max-w-5xl mx-auto leading-relaxed">
@@ -76,13 +76,13 @@ const ChooseUs = () => {
             onClick={prevSlide}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
           >
-            <ChevronLeft size={24} className="text-[#496791]" />
+            <ChevronLeft size={24} className="text-[#005A98]" />
           </button>
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
           >
-            <ChevronRight size={24} className="text-[#496791]" />
+            <ChevronRight size={24} className="text-[#005A98]" />
           </button>
 
           <div className="relative w-full h-full flex items-center justify-center">
@@ -118,7 +118,7 @@ const ChooseUs = () => {
                   className={`absolute transition-all duration-700 ease-in-out transform ${transformClass}`}
                   style={{ zIndex }}
                 >
-                  <div className="bg-[#496791] w-80 h-64 rounded-xl text-white shadow-xl flex flex-col items-center justify-center p-6">
+                  <div className="bg-[#005A98] w-80 h-64 rounded-xl text-white shadow-xl flex flex-col items-center justify-center p-6">
                     <div className="bg-white p-3 rounded-full mb-4">
                       {item.icon}
                     </div>
@@ -141,7 +141,7 @@ const ChooseUs = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentSlide
-                    ? "w-12 h-3 bg-[#496791] shadow-lg"
+                    ? "w-12 h-3 bg-[#005A98] shadow-lg"
                     : "w-3 h-3 bg-blue-300 hover:bg-blue-400"
                 }`}
               />

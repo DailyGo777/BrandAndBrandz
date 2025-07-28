@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="relative py-20 bg-[#4A6893]">
+    <section className="relative py-20 bg-[#005A98]">
       <div className="hidden lg:block absolute top-0 left-0 w-full h-40 overflow-hidden pointer-events-none z-0">
         <svg
           width="600"
@@ -66,7 +66,7 @@ const About = () => {
           <h5 className="text-xl font-medium mb-6">
             Creative minds. Strategic thinking. Real growth.
           </h5>
-          <button className="px-4 py-2 bg-[#4A6893] lg:w-60 w-50 text-white lg:text-lg text-md font-semibold rounded hover:bg-gray-100 hover:text-black transition border-2 border-white">
+          <button className="px-4 py-2 bg-[#005A98] lg:w-60 w-50 text-white lg:text-lg text-md font-semibold rounded hover:bg-gray-100 hover:text-black transition border-2 border-white">
             Learn More About Us
           </button>
         </div>

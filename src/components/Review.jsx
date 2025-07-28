@@ -5,7 +5,7 @@ import ratings from "../../public/Five Star Rating.svg";
 import sanbit from "../../public/Snabit.svg";
 import pincode from "../../public/Pincode.svg";
 import casagrand from "../../public/Casagrand.svg";
-import unacademy from "../../public/unacademy.jpg";
+import unacademy from "../../public/unacademy.svg";
 
 const Review = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -64,7 +64,7 @@ const Review = () => {
   return (
     <section className="pb-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#496791] mb-6">
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#005A98] mb-6">
           Our Reviews & Recognition
         </h1>
         <h3 className="text-2xl lg:text-4xl text-gray-800 max-w-5xl mx-auto leading-relaxed">
@@ -100,7 +100,7 @@ const Review = () => {
             return (
               <div
                 key={index}
-                className={`${className} transform ${transform} ${scale} ${opacity} hover:border-2 hover:border-[#496791] hover:shadow-lg rounded-md`}
+                className={`${className} transform ${transform} ${scale} ${opacity} hover:border-2 hover:border-[#005A98] hover:shadow-lg rounded-md`}
                 style={{ zIndex }}
               >
                 <div className="bg-white w-80 h-auto rounded-xl p-6 shadow-lg flex flex-col items-center gap-4">
@@ -110,7 +110,7 @@ const Review = () => {
                     width={60}
                     height={60}
                   />
-                  <h3 className="text-xl font-semibold text-[#496791]">
+                  <h3 className="text-xl font-semibold text-[#005A98]">
                     {item.title}
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
@@ -136,7 +136,7 @@ const Review = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`rounded-full transition-all duration-300 ${
                   index === currentSlide
-                    ? "w-8 h-3 bg-[#496791]"
+                    ? "w-8 h-3 bg-[#005A98]"
                     : "w-3 h-3 bg-gray-300"
                 }`}
               />
