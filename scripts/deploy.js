@@ -57,9 +57,10 @@ async function deployToHostinger() {
     console.log("✅ Connected to Hostinger FTP");
 
     await client.ensureDir(REMOTE_DIR);
+    await client.cd(REMOTE_DIR);
     await client.clearWorkingDir();
     await client.uploadFromDir(LOCAL_DIR);
-
+    
     console.log("🚀 Deployed successfully to Hostinger!");
   } catch (err) {
     console.error("❌ Deployment failed:", err);

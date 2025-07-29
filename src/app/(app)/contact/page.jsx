@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useForm } from "react-hook-form";
@@ -8,9 +8,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { contactFormSchema } from "@/utils/schemaValidation";
-
+import { useState } from "react";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,7 +23,14 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("https://brandandbrandz-backend.onrender.com/api/contacts", data);
+      setLoading(true);
+      await axios.post(
+        "https://brandandbrandz-backend.onrender.com/api/contacts",
+        data,
+        {
+          timeout: 6000,
+        }
+      );
       toast.success("Scheduled meeting Successfully!", {
         position: "bottom-left",
         autoClose: 3000,
@@ -31,11 +39,12 @@ export default function Contact() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        className: "bg-[#005A98] text-[#030303] font-semibold"
+        className: "bg-[#005A98] text-[#030303] font-semibold",
       });
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong!", {
+      const isTimeout = error.code === "ECONNABORTED";
+      toast.error( isTimeout ? "Network Timeout! Please try again" : "Something went wrong!", {
         position: "bottom-left",
         autoClose: 3000,
         hideProgressBar: false,
@@ -43,8 +52,10 @@ export default function Contact() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        className: "bg-red-500 text-[#030303] font-semibold"
+        className: "bg-red-500 text-[#030303] font-semibold",
       });
+    } finally {
+      setLoading(false);
     }
     reset();
   };
@@ -152,7 +163,7 @@ export default function Contact() {
                     placeholder="+91 123-45678"
                     className="w-full px-3 py-3 border border-gray-300 rounded-md font-roboto text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005A98] focus:border-transparent"
                   />
-                   {errors.phoneNumber && (
+                  {errors.phoneNumber && (
                     <p className="text-red-500 text-sm">
                       {errors.phoneNumber.message}
                     </p>
@@ -180,25 +191,33 @@ export default function Contact() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#005A98] text-white px-6 py-3 rounded-md font-roboto text-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center gap-4 cursor-pointer"
+                  disabled={loading}
+                  className={`w-full px-6 py-3 rounded-md font-roboto text-lg font-semibold flex items-center justify-center gap-4 cursor-pointer transition-all 
+                              ${
+                                loading
+                                  ? "bg-[#005A98]/60 cursor-not-allowed"
+                                  : "bg-[#005A98] hover:bg-opacity-90 text-white"
+                              }
+                            `}
                 >
-                  Schedule Meeting
+                  {loading ? "Processing" : "Schedule Meeting"}
                   <ArrowRight size={16} />
                 </button>
               </form>
             </div>
 
-         {/* Google Maps Location */}
+            {/* Google Maps Location */}
             <div className="w-full">
               <h2 className="font-roboto text-3xl font-bold text-[#005A98] mb-6 text-center">
                 Find Us Here
               </h2>
               <p className="font-roboto text-lg text-[#4B4848] mb-8 leading-relaxed text-center">
-                Visit our office or get direction. We’re centrally located for your convenience.
+                Visit our office or get direction. We’re centrally located for
+                your convenience.
               </p>
 
               {/* Google Maps Embed */}
-               <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border">
+              <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1!2d77.7655067!3d12.9844467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fd5dc557937%3A0xea0c5cc98b0272e5!2sDaily%20Go%20-%20Events%20and%20Manpower%20Services!5e0!3m2!1sen!2sin!4v1647845123456!5m2!1sen!2sin"
                   width="100%"

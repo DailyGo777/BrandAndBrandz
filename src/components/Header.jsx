@@ -35,25 +35,25 @@ export default function Header() {
               About
             </Link>
             <Link
-              href={"service"}
+              href={"/service"}
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Services
             </Link>
             <Link
-              href={"/"}
+              href={"/team"}
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Our Team
             </Link>
             <Link
-              href={"client"}
+              href={"/client"}
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Clients
             </Link>
             <Link
-              href={"contact"}
+              href={"/contact"}
               className="bg-[#005A98] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all"
             >
               Contact Us
@@ -73,40 +73,38 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <a
-                href="#home"
-                className="font-carlito text-xl text-[#1E1E1E] font-bold hover:text-[#005A98] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              <Link
+                href={"/"}
+                className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Home
-              </a>
-              <a
-                href="#about"
-                className="font-carlito text-xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              </Link>
+               <Link
+                href={"/"}
+                className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 About
-              </a>
+              </Link>
               <Link
-                href={"service"}
+                href={"/service"}
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Services
               </Link>
               <Link
-                href={"/"}
+                href={"/team"}
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Our Team
               </Link>
               <Link
-                href={"client"}
+                href={"/client"}
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Clients
               </Link>
               <Link
-                href={"contact"}
+                href={"/contact"}
                 className="bg-[#005A98] text-white px-4 py-3 rounded-xl font-carlito text-xl font-bold hover:bg-opacity-90 transition-all w-fit"
               >
                 Contact Us
