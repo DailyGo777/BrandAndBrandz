@@ -34,18 +34,18 @@ const page = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <section className="py-20 bg-gray-50">
-        <div className="w-full flex flex-center items-center flex-col gap-8 px-4 pb-20">
-          <h1 className="text-center font-bold font-roboto text-[#005A98] lg:text-4xl text-3xl">
+      <section className="min-h-screen py-20 bg-gray-50">
+        <div className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20">
+          <h1 className="text-center font-bold font-roboto text-[#005A98] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Our Valued Clients & Partners
           </h1>
-          <p className="w-full lg:w-2/3 text-center text-[#1e1e1e] text-lg">
+          <p className="w-full lg:w-2/3 text-center text-[#1e1e1e] text-lg sm:text-xl md:text-xl lg:text-2xl">
             From rising startups to global brands, we’re proud to partner with
             visionary businesses that trust us to bring their ideas to life.
             Their success is our greatest reward.
           </p>
         </div>
-        <div className="w-full bg-[#005A98] flex flex-col justify-center items-center gap-8 py-8 px-4">
+        <div className="w-full bg-[#005A98] flex flex-col justify-center items-center gap-8 py-16 px-4">
           <h2 className="text-center font-bold font-roboto text-white lg:text-4xl text-3xl">
             Trusted by the Best{" "}
           </h2>

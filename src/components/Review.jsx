@@ -1,63 +1,24 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ratings from "../../public/Five Star Rating.svg";
-import sanbit from "../../public/Snabit.svg";
-import pincode from "../../public/Pincode.svg";
-import casagrand from "../../public/Casagrand.svg";
-import unacademy from "../../public/unacademy.svg";
+import { review } from "@/utils/data";
 
 const Review = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const carouselItems = [
-    {
-      title: "PhonePe Pincode",
-      description:
-        "The promoters were confident, well-trained, and effective. We noticed a clear rise in app installs during the campaign. Execution was seamless.",
-      image: pincode,
-      rating: ratings,
-      reviewer: "— Regional Manager, PhonePe",
-    },
-    {
-      title: "Casagrand",
-      description:
-        "A proactive and professional team. From brochure distribution to on-ground coordination, everything was perfectly managed.",
-      image: casagrand,
-      rating: ratings,
-      reviewer: "— Sales Head, Casagrand",
-    },
-    {
-      title: "Snabbit",
-      description:
-        "Strong local traction, well-planned QR outreach, and great communication. The campaign helped us build momentum quickly.",
-      image: sanbit,
-      rating: ratings,
-      reviewer: "— Co-founder, Snabbit",
-    },
-    {
-      title: "Unacademy",
-      description:
-        "Campaign execution was smooth and efficient. We collected valuable leads and achieved strong visibility among students and parents.",
-      image: unacademy,
-      rating: ratings,
-      reviewer: "— Area Marketing Manager, Unacademy",
-    },
-  ];
-
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
+      setCurrentSlide((prev) => (prev + 1) % review.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, carouselItems.length]);
+  }, [isAutoPlaying, review.length]);
 
   const getPosition = (index) => {
-    const total = carouselItems.length;
+    const total = review.length;
     return (index - currentSlide + total) % total;
   };
 
@@ -77,7 +38,7 @@ const Review = () => {
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
           {/* Carousel Cards */}
-          {carouselItems.map((item, index) => {
+          {review.map((item, index) => {
             const position = getPosition(index);
             let className = "absolute transition-all duration-700 ease-in-out";
             let zIndex = 10;
@@ -122,7 +83,6 @@ const Review = () => {
                     width={120}
                     height={24}
                   />
-                  <p className="text-sm text-gray-500">{item.reviewer}</p>
                 </div>
               </div>
             );
@@ -130,7 +90,7 @@ const Review = () => {
 
           {/* Dots */}
           <div className="absolute bottom-0 flex justify-center gap-3 mt-8">
-            {carouselItems.map((_, index) => (
+            {review.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}

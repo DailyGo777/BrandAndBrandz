@@ -14,7 +14,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 lg:px-20">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center w-25 h-25 lg:w-50 lg:h-50">
+          <div className="flex items-center w-25 h-25">
             <Link href={"/"}>
               <Image src={bandbLogo} alt="bandblogo" />
             </Link>
@@ -29,7 +29,7 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href={"/"}
+              href={"/about"}
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               About
@@ -80,7 +80,7 @@ export default function Header() {
                 Home
               </Link>
                <Link
-                href={"/"}
+                href={"/about"}
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 About
