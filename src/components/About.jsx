@@ -1,23 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import img from "../../public/about_img_2.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useAnimation, useInView, motion } from "framer-motion";
+import { imageVariant, contentVariant } from "@/utils/animation";
 
 const About = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView, controls]);
+
   return (
-    <section className="relative py-20 bg-[#005A98]">
+    <section className="relative py-20 bg-[#005A98]" ref={ref}>
       <div className="flex justify-center items-center gap-4 mb-16">
         <h1 className="text-4xl font-bold text-white">Who We Are</h1>
       </div>
       <div className="px-12 flex lg:flex-row flex-col justify-center items-stretch gap-12">
-        <div className="w-full lg:w-1/2">
+        <motion.div
+          className="w-full lg:w-1/2"
+          variants={imageVariant}
+          initial="hidden"
+          animate={controls}
+        >
           <Image
             src={img}
             alt="Who we are"
             className="w-full h-auto object-cover rounded-md"
           />
-        </div>
-        <div className="w-full lg:w-1/2 flex flex-col justify-between text-white">
+        </motion.div>
+
+        <motion.div
+          className="w-full lg:w-1/2 flex flex-col justify-between text-white"
+          variants={contentVariant}
+          initial="hidden"
+          animate={controls}
+        >
           <h3 className="text-3xl font-bold mb-4">
             Building Brands Through Vision, Strategy & Design
           </h3>
@@ -39,7 +64,7 @@ const About = () => {
               Learn More About Us
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -4,12 +4,16 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import React, { useState, useRef } from "react";
 import { services } from "@/utils/data";
+import { motion } from "framer-motion";
+import { popUpVariant } from "@/utils/animation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const page = () => {
   const [imageIndexes, setImageIndexes] = useState(
     Array(services.length).fill(0)
   );
   const timersRef = useRef({});
+  const { ref: heroRef, controls: heroControls } = useScrollAnimation();
 
   const startImageTransition = (index) => {
     if (timersRef.current[index]) return;
@@ -45,7 +49,13 @@ const page = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <section className="min-h-screen py-20 bg-gray-50">
-        <div className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20">
+        <motion.div
+          className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
+          ref={heroRef}
+          variants={popUpVariant}
+          initial="hidden"
+          animate={heroControls}
+        >
           <h1 className="text-center font-bold font-roboto text-[#005A98] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Our Marketing Services
           </h1>
@@ -55,7 +65,7 @@ const page = () => {
             audience, and grow faster. Let’s turn your vision into results that
             matter.
           </p>
-        </div>
+        </motion.div>
         <div className="w-full bg-[#005A98] flex flex-col justify-center items-center gap-8 py-16 px-4">
           <h2 className="text-center font-bold font-roboto text-white lg:text-4xl text-3xl">
             Find the Perfect Solution

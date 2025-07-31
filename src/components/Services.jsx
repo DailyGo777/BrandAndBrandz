@@ -1,8 +1,21 @@
+"use client";
+
 import React from "react";
 import { Paintbrush, CodeXml, Laptop } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Services = () => {
+  const cardVariants = {
+    initial: {},
+    hover: {},
+  };
+
+  const iconVariants = {
+    initial: { rotate: 0 },
+    hover: { rotate: 20, transition: { duration: 1, ease: "easeInOut" } },
+  };
+
   return (
     <section className="pb-20 bg-white">
       <div className="w-full flex flex-col justify-center items-center gap-6">
@@ -15,25 +28,39 @@ const Services = () => {
         </h3>
       </div>
       <div className="w-full p-12 flex lg:flex-row flex-col justify-evenly items-center gap-6 text-black">
-        <div className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4">
-          <Paintbrush
-            color="white"
-            size={32}
-            className="bg-[#005A98] w-12 h-12 rounded-md p-1"
-          />
+        <motion.div
+          className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4"
+          variants={cardVariants}
+          initial="initial"
+          whileHover="hover"
+        >
+          <motion.div variants={iconVariants}>
+            <Paintbrush
+              color="white"
+              size={32}
+              className="bg-[#005A98] w-12 h-12 rounded-md p-1"
+            />
+          </motion.div>
           <h3 className="text-[#005A98] lg:text-xl text-lg font-semibold text-center">
             Creative Design & Branding
           </h3>
           <p className="text-[#4B4848] text-md text-center">
             Logos, UI/UX, and visual assets that define and elevate your brand.
           </p>
-        </div>
-        <div className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4">
-          <CodeXml
-            color="white"
-            size={32}
-            className="bg-[#005A98] w-12 h-12 rounded-md p-1"
-          />
+        </motion.div>
+        <motion.div
+          className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4"
+          variants={cardVariants}
+          initial="initial"
+          whileHover="hover"
+        >
+          <motion.div variants={iconVariants}>
+            <CodeXml
+              color="white"
+              size={32}
+              className="bg-[#005A98] w-12 h-12 rounded-md p-1"
+            />
+          </motion.div>
           <h3 className="text-[#005A98] lg:text-xl text-lg font-semibold text-center">
             Website Design & Development
           </h3>
@@ -41,13 +68,20 @@ const Services = () => {
             Responsive, fast-loading websites and landing pages built to
             perform.
           </p>
-        </div>
-        <div className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4">
-          <Laptop
-            color="white"
-            size={32}
-            className="bg-[#005A98] w-12 h-12 rounded-md p-1"
-          />
+        </motion.div>
+        <motion.div
+          className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center gap-6 border-2 border-blue-200 rounded-md shadow-xl p-4"
+          variants={cardVariants}
+          initial="initial"
+          whileHover="hover"
+        >
+          <motion.div variants={iconVariants}>
+            <Laptop
+              color="white"
+              size={32}
+              className="bg-[#005A98] w-12 h-12 rounded-md p-1"
+            />
+          </motion.div>
           <h3 className="text-[#005A98] lg:text-xl text-lg font-semibold text-center">
             Digital Marketing
           </h3>
@@ -55,7 +89,7 @@ const Services = () => {
             SEO, Social Media, Ads & Email strategies that drive traffic and
             sales.
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="flex justify-center items-center">
         <Link href={"/service"}>

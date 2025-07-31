@@ -27,4 +27,5 @@ body {
 
   /* Optional: default to roboto */
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }

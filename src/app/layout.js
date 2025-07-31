@@ -19,9 +19,6 @@ const brunoAce = Bruno_Ace_SC({
 export const metadata = {
   title: "BrandAndBrandz",
   description: "One Stop for end to end services",
-  icons:{
-    icon: "/favicon.png",
-  }
 };
 
 export default function RootLayout({ children }) {
