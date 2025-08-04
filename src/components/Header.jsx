@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import bandbLogo from "../../public/BandBLogo.svg";
 
-export default function Header() {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center w-25 h-25">
             <Link href={"/"}>
-              <Image src={bandbLogo} alt="bandblogo" />
+              <Image src={bandbLogo} alt="Brand and Brandz Logo" priority />
             </Link>
           </div>
 
@@ -63,6 +63,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             className="lg:hidden text-gray-700"
+            aria-label="Toggle menu"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -79,7 +80,7 @@ export default function Header() {
               >
                 Home
               </Link>
-               <Link
+              <Link
                 href={"/about"}
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
@@ -115,4 +116,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

@@ -25,9 +25,9 @@ const Review = () => {
   return (
     <section className="pb-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#005A98] mb-6">
+        <h2 className="text-4xl lg:text-5xl font-bold text-[#005A98] mb-6">
           Our Reviews & Recognition
-        </h1>
+        </h2>
         <h3 className="text-2xl lg:text-4xl text-gray-800 max-w-5xl mx-auto leading-relaxed">
           Acknowledged by industry leaders for our commitment to excellence.
         </h3>

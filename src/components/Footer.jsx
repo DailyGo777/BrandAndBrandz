@@ -6,10 +6,11 @@ import {
   Phone,
   Mail,
   MapPin,
-  Instagram
+  Instagram,
 } from "lucide-react";
 import bandbLogo from "../../public/BandBLogo.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Image src={bandbLogo} alt="bandblogo" />
+            <Image src={bandbLogo} alt="Brand and Brandz Logo" />
             <p className="[font-family:var(--font-sans)] text-text-light text-lg leading-relaxed max-w-md">
               Empowering brands with smart, scalable solutions.
               <br />
@@ -28,18 +29,22 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex items-center gap-6 mt-8">
-              <a
-                href="#"
+              <Link
+                href={"https://www.instagram.com/brandandbrandz_/?igsh=emZldnJiOG9nbGti#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-text-light hover:text-white transition-colors"
               >
                 <Instagram size={24} />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href={"https://www.linkedin.com/company/brandandbrandz/"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-text-light hover:text-white transition-colors"
               >
                 <Linkedin size={24} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -50,52 +55,52 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   Branding
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   Creative Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   Website Design & Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   IT Consulting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   Digital Marketing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/service"}
                   className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
                 >
                   Manpower Solution
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -144,24 +149,24 @@ export default function Footer() {
 
             {/* Legal Links */}
             <div className="flex flex-wrap items-center gap-6">
-              <a
-                href="#"
+              <Link
+                href={"/"}
                 className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href={"/"}
                 className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
               >
                 Terms of Service
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href={"/"}
                 className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
               >
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

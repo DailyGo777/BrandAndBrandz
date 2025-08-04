@@ -7,6 +7,7 @@ import { teams } from "@/utils/data";
 import { motion } from "framer-motion";
 import { popUpVariant } from "@/utils/animation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import Head from "next/head";
 
 const page = () => {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation();
@@ -16,7 +17,7 @@ const page = () => {
       <div className="bg-white rounded-xl shadow-md p-6 text-center max-w-xs">
         <img
           src={image}
-          alt={title}
+          alt={`Photo of ${title}, ${sub_title}`}
           className="w-full mx-auto mb-4 rounded-lg object-cover"
         />
         <h3 className="text-xl font-semibold text-[#005A98]">{title}</h3>
@@ -28,59 +29,85 @@ const page = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="min-h-screen py-20 bg-gray-50">
-        <motion.div
-          className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
-          ref={heroRef}
-          variants={popUpVariant}
-          initial="hidden"
-          animate={heroControls}
-        >
-          <h1 className="text-center font-bold font-roboto text-[#005A98] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Meet Our Creative Force{" "}
-          </h1>
-          <p className="w-full lg:w-2/3 text-center text-[#1e1e1e] text-lg sm:text-xl md:text-xl lg:text-2xl">
-            A passionate team of strategists, designers, and marketers driven to
-            bring your brand to life.
-          </p>
-        </motion.div>
-        <div className="w-full bg-[#005A98] flex flex-col justify-center items-center gap-8 py-16 px-4">
-          <h2 className="text-center font-bold font-roboto text-white lg:text-4xl text-3xl">
-            The Creative Minds Powering Your Brand Success
-          </h2>
-          <p className="w-full lg:w-1/2 text-center text-white text-lg">
-            A dynamic team blending strategy, creativity, and expertise to
-            deliver innovative, results-driven solutions.
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center px-4 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
-            {teams.map((member, index) => (
-              <TeamCard key={index} {...member} />
-            ))}
+    <>
+      <Head>
+        <title>Our Team | Brand & Brandz - Creative Branding Experts</title>
+        <meta
+          name="description"
+          content="Meet the passionate minds behind Brand & Brandz. Our team of strategists, designers, and marketers work together to build unforgettable brand experiences."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Our Team | Brand & Brandz" />
+        <meta
+          property="og:description"
+          content="Get to know the Brand & Brandz team — a blend of creativity and strategy dedicated to driving your brand’s success."
+        />
+        <meta property="og:url" content="https://brandandbrandz.com/team" />
+        <link rel="canonical" href="https://brandandbrandz.com/team" />
+      </Head>
+      <main className="min-h-screen bg-white">
+        <Header />
+
+        <section className="min-h-screen py-20 bg-gray-50">
+          {/* Hero Section */}
+          <motion.div
+            className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
+            ref={heroRef}
+            variants={popUpVariant}
+            initial="hidden"
+            animate={heroControls}
+          >
+            <h1 className="text-center font-bold font-roboto text-[#005A98] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              Meet Our Creative Force
+            </h1>
+            <p className="w-full lg:w-2/3 text-center text-[#1e1e1e] text-lg sm:text-xl md:text-xl lg:text-2xl">
+              A passionate team of strategists, designers, and marketers driven
+              to bring your brand to life.
+            </p>
+          </motion.div>
+
+          {/* Tagline Section */}
+          <div className="w-full bg-[#005A98] flex flex-col justify-center items-center gap-8 py-16 px-4">
+            <h2 className="text-center font-bold font-roboto text-white lg:text-4xl text-3xl">
+              The Creative Minds Powering Your Brand Success
+            </h2>
+            <p className="w-full lg:w-1/2 text-center text-white text-lg">
+              A dynamic team blending strategy, creativity, and expertise to
+              deliver innovative, results-driven solutions.
+            </p>
           </div>
 
-          <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-12">
-            {/* First row (3 items) */}
-            <div className="grid grid-cols-3 gap-8">
-              {teams.slice(0, 3).map((member, index) => (
+          {/* Team Grid */}
+          <div className="flex flex-col items-center justify-center px-4 py-10">
+            {/* Mobile / Tablet View */}
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
+              {teams.map((member, index) => (
                 <TeamCard key={index} {...member} />
               ))}
             </div>
 
-            {/* Second row (4 items) */}
-            <div className="grid grid-cols-4 gap-8">
-              {teams.slice(3).map((member, index) => (
-                <TeamCard key={index + 3} {...member} />
-              ))}
+            {/* Desktop View */}
+            <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-12">
+              {/* First row (3 cards) */}
+              <div className="grid grid-cols-3 gap-8">
+                {teams.slice(0, 3).map((member, index) => (
+                  <TeamCard key={index} {...member} />
+                ))}
+              </div>
+
+              {/* Second row (remaining cards) */}
+              <div className="grid grid-cols-4 gap-8">
+                {teams.slice(3).map((member, index) => (
+                  <TeamCard key={index + 3} {...member} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <Footer />
-    </div>
+        </section>
+
+        <Footer />
+      </main>
+    </>
   );
 };
 

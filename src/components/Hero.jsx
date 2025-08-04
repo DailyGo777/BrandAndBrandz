@@ -34,12 +34,12 @@ const Hero = () => {
             We don’t just run campaigns — we help your business grow.
           </h3>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={"/contact"}>
+            <Link href={"/contact"} aria-label="Go to Contact page to elevate your brand">
               <button className="px-6 py-2 bg-[#005A98] text-white text-lg font-bold rounded-md cursor-pointer">
                 Let’s Elevate Your Brand
               </button>
             </Link>
-            <Link href={"/service"}>
+            <Link href={"/service"} aria-label="Go to Service page to access our services">
               <button className="px-6 py-2 border border-[#005A98] text-[#005A98] text-lg font-bold rounded-md cursor-pointer">
                 Our Services
               </button>

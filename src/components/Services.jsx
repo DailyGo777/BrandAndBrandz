@@ -19,9 +19,9 @@ const Services = () => {
   return (
     <section className="pb-20 bg-white">
       <div className="w-full flex flex-col justify-center items-center gap-6">
-        <h1 className="lg:text-4xl text-3xl text-[#005A98] font-bold text-center">
+        <h2 className="lg:text-4xl text-3xl text-[#005A98] font-bold text-center">
           Our Core Services
-        </h1>
+        </h2>
         <h3 className="lg:text-2xl text-lg text-black font-semibold text-center">
           End-to-end solutions designed to expand your brand’s reach and
           influence.
@@ -92,7 +92,7 @@ const Services = () => {
         </motion.div>
       </div>
       <div className="flex justify-center items-center">
-        <Link href={"/service"}>
+        <Link href={"/service"} aria-label="Go to service page to know our services">
           <button className="lg:w-50 lg:h-16 w-44 h-12 text-white bg-[#005A98] font-bold lg:text-xl text-lg rounded-md text-center cursor-pointer">
             View All Services
           </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { lazy, useEffect, useRef } from "react";
 import img from "../../public/about_img_2.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section className="relative py-20 bg-[#005A98]" ref={ref}>
       <div className="flex justify-center items-center gap-4 mb-16">
-        <h1 className="text-4xl font-bold text-white">Who We Are</h1>
+        <h2 className="text-4xl font-bold text-white">Who We Are</h2>
       </div>
       <div className="px-12 flex lg:flex-row flex-col justify-center items-stretch gap-12">
         <motion.div
@@ -32,8 +32,9 @@ const About = () => {
         >
           <Image
             src={img}
-            alt="Who we are"
+            alt="Team of Brand and Brandz working together on a marketing project"
             className="w-full h-auto object-cover rounded-md"
+            loading="lazy"
           />
         </motion.div>
 
@@ -59,7 +60,7 @@ const About = () => {
           <h5 className="text-xl font-medium mb-6">
             Creative minds. Strategic thinking. Real growth.
           </h5>
-          <Link href={"/about"}>
+          <Link href={"/about"} aria-label="Go to About page to learn more about us">
             <button className="px-4 py-2 bg-[#005A98] lg:w-60 w-50 text-white lg:text-lg text-md font-semibold rounded hover:bg-gray-100 hover:text-black transition border-2 border-white cursor-pointer">
               Learn More About Us
             </button>

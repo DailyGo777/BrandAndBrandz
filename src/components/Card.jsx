@@ -36,7 +36,7 @@ const Card = () => {
             Let’s craft your next big move. Request a proposal and let’s grow,
             together.
           </p>
-          <Link href={"/contact"}>
+          <Link href={"/contact"} aria-label="Go to Contact page to contact us">
             <button className="w-50 h-12 bg-[#005A98] text-[#F9F9F9] rounded-md text-lg cursor-pointer">
               Request Proposal
             </button>
@@ -60,7 +60,7 @@ const Card = () => {
             We don’t just build brands — we craft success stories that leave a
             mark.
           </p>
-          <Link href={"/about"}>
+          <Link href={"/about"} aria-label="Go to About page to learn more about us">
             <button className="w-50 h-12 bg-[#005A98] text-[#F9F9F9] rounded-md text-lg cursor-pointer">
               Learn More
             </button>
@@ -84,7 +84,7 @@ const Card = () => {
             From strategy to execution — everything your brand needs, under one
             roof.
           </p>
-          <Link href={"/client"}>
+          <Link href={"/client"} aria-label="Go to Client page to know our clients">
             <button className="w-50 h-12 bg-[#005A98] text-[#F9F9F9] rounded-md text-lg cursor-pointer">
               Visit Our Work
             </button>
