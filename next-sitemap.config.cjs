@@ -14,6 +14,7 @@ module.exports = {
       },
     ],
   },
+  outDir: "./out",
   additionalPaths: async (config) => {
     return [
       await config.transform(config, '/about'),
