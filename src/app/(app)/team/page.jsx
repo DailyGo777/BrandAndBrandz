@@ -7,7 +7,8 @@ import { teams } from "@/utils/data";
 import { motion } from "framer-motion";
 import { popUpVariant } from "@/utils/animation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import Head from "next/head";
+import Script from "next/script";
+import { jsonLd } from "@/utils/jsonLD";
 
 const page = () => {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation();
@@ -30,21 +31,11 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <title>Our Team | Brand & Brandz - Creative Branding Experts</title>
-        <meta
-          name="description"
-          content="Meet the passionate minds behind Brand & Brandz. Our team of strategists, designers, and marketers work together to build unforgettable brand experiences."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Our Team | Brand & Brandz" />
-        <meta
-          property="og:description"
-          content="Get to know the Brand & Brandz team — a blend of creativity and strategy dedicated to driving your brand’s success."
-        />
-        <meta property="og:url" content="https://brandandbrandz.com/team" />
-        <link rel="canonical" href="https://brandandbrandz.com/team" />
-      </Head>
+     <Script
+        id="jsonld-team"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="min-h-screen bg-white">
         <Header />
 

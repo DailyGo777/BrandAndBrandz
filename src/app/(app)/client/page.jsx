@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { popUpVariant } from "@/utils/animation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import Head from "next/head";
+import { jsonLd } from "@/utils/jsonLD";
+import Script from "next/script";
 
 const page = () => {
   const [columns, setColumns] = useState(4);
@@ -38,26 +39,13 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <title>Our Clients | Brand & Brandz</title>
-        <meta
-          name="description"
-          content="Explore the brands and startups that trust Brand & Brandz for exceptional design and marketing solutions."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Our Clients | Brand & Brandz" />
-        <meta
-          property="og:description"
-          content="Discover our valued clients and how we've helped them grow through innovative design and marketing."
-        />
-        <meta property="og:url" content="https://brandandbrandz.com/client" />
-        <meta property="og:type" content="website" />
-
-        <link rel="canonical" href="https://brandandbrandz.com/client" />
-      </Head>
+      <Script
+        id="jsonld-client"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="min-h-screen bg-white">
-          <Header />
+        <Header />
         <section className="min-h-screen py-20 bg-gray-50">
           <motion.div
             className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
@@ -111,7 +99,7 @@ const page = () => {
             ))}
           </div>
         </section>
-          <Footer />
+        <Footer />
       </main>
     </>
   );

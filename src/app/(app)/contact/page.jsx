@@ -9,7 +9,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { contactFormSchema } from "@/utils/schemaValidation";
 import { useState } from "react";
-import Head from "next/head";
+import { jsonLd } from "@/utils/jsonLD";
+import Script from "next/script";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -68,22 +69,11 @@ export default function Contact() {
 
   return (
     <>
-      <Head>
-        <title>Contact Us | Brand & Brandz</title>
-        <meta
-          name="description"
-          content="Let's connect! Get in touch with Brand & Brandz to start building powerful brand strategies and visual identities that elevate your business."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://brandandbrandz.com/contact" />
-        <meta property="og:title" content="Contact Us | Brand & Brandz" />
-        <meta
-          property="og:description"
-          content="Looking to transform your brand? Reach out to Brand & Brandz — we're ready to collaborate and create impact."
-        />
-        <meta property="og:url" content="https://brandandbrandz.com/contact" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <Script
+        id="jsonld-contact"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="min-h-screen bg-white">
         <Header />
 

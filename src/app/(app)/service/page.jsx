@@ -7,7 +7,8 @@ import { services } from "@/utils/data";
 import { motion } from "framer-motion";
 import { popUpVariant } from "@/utils/animation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import Head from "next/head";
+import Script from "next/script";
+import { jsonLd } from "@/utils/jsonLD";
 
 const page = () => {
   const [imageIndexes, setImageIndexes] = useState(
@@ -48,23 +49,11 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          Our Services | Brand & Brandz - Marketing & Branding Solutions
-        </title>
-        <meta
-          name="description"
-          content="Explore the marketing services offered by Brand & Brandz — from creative campaigns to strategic branding solutions tailored for your business growth."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Our Services | Brand & Brandz" />
-        <meta
-          property="og:description"
-          content="Creative and strategic marketing services designed to help your brand grow and connect with your audience."
-        />
-        <meta property="og:url" content="https://brandandbrandz.com/service" />
-        <link rel="canonical" href="https://brandandbrandz.com/service" />
-      </Head>
+      <Script
+        id="jsonld-service"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="min-h-screen bg-white">
         <Header />
 

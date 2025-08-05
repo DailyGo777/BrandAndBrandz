@@ -16,7 +16,8 @@ import {
 } from "@/utils/animation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { jsonLd } from "@/utils/jsonLD";
+import Script from "next/script";
 
 const page = () => {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation();
@@ -26,23 +27,13 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <title>About Us | Brand & Brandz - Creative Branding Agency</title>
-        <meta
-          name="description"
-          content="Learn more about Brand & Brandz – the creative branding agency that turns bold ideas into powerful brand experiences through design, storytelling, and strategy."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="About Us | Brand & Brandz" />
-        <meta
-          property="og:description"
-          content="We help brands grow through design, strategy, and creativity. Meet the team behind Brand & Brandz."
-        />
-        <meta property="og:url" content="https://brandandbrandz.com/about" />
-        <link rel="canonical" href="https://brandandbrandz.com/about" />
-      </Head>
+      <Script
+        id="jsonld-about"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="min-h-screen bg-white">
-          <Header />
+        <Header />
         <section className="min-h-screen py-20 bg-white">
           <motion.div
             className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
