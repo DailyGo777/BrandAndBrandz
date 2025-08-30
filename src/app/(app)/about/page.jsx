@@ -97,7 +97,7 @@ const page = () => {
               <p className="text-start text-white text-lg">
                 Let’s create something meaningful — together.
               </p>
-              <Link href={"/service"}>
+              <Link href={"/service"} aria-label="Go to service page to view our services">
                 <button className="text-center w-52 h-12 font-bold text-[#005A98] bg-white border-1 border-white rounded-lg p-2 text-lg cursor-pointer">
                   Explore Our Services
                 </button>

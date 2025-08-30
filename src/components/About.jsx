@@ -1,11 +1,11 @@
 "use client";
 
-import React, { lazy, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import img from "../../public/about_img_2.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useAnimation, useInView, motion } from "framer-motion";
 import { imageVariant, contentVariant } from "@/utils/animation";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const About = () => {
   const ref = useRef(null);

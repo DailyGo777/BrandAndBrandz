@@ -130,6 +130,7 @@ const page = () => {
                   <div className="flex justify-center pb-4">
                     <button
                       onClick={() => handleEnquire(service.title)}
+                      aria-label="Enqiure us about our services"
                       className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
                     >
                       Enquire Now

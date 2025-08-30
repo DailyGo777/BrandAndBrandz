@@ -74,12 +74,14 @@ const ChooseUs = () => {
         >
           <button
             onClick={prevSlide}
+            aria-label="Previous Slide"
             className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
           >
             <ChevronLeft size={24} className="text-[#005A98]" />
           </button>
           <button
             onClick={nextSlide}
+            aria-label="Next Slide"
             className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
           >
             <ChevronRight size={24} className="text-[#005A98]" />
@@ -144,6 +146,7 @@ const ChooseUs = () => {
                     ? "w-12 h-3 bg-[#005A98] shadow-lg"
                     : "w-3 h-3 bg-blue-300 hover:bg-blue-400"
                 }`}
+                aria-label="Current Slide"
               />
             ))}
           </div>

@@ -24,36 +24,42 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link
               href={"/"}
+              aria-label="Go to home page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Home
             </Link>
             <Link
               href={"/about"}
+              aria-label="Go to about page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               About
             </Link>
             <Link
               href={"/service"}
+              aria-label="Go to service page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Services
             </Link>
             <Link
               href={"/team"}
+              aria-label="Go to team page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Our Team
             </Link>
             <Link
               href={"/client"}
+              aria-label="Go to client page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
             >
               Clients
             </Link>
             <Link
               href={"/contact"}
+              aria-label="Go to contact page"
               className="bg-[#005A98] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all"
             >
               Contact Us
@@ -76,36 +82,42 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <Link
                 href={"/"}
+                aria-label="Go to home page"
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Home
               </Link>
               <Link
                 href={"/about"}
+                aria-label="Go to about page"
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 About
               </Link>
               <Link
                 href={"/service"}
+                aria-label="Go to service page"
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Services
               </Link>
               <Link
                 href={"/team"}
+                aria-label="Go to team page"
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Our Team
               </Link>
               <Link
                 href={"/client"}
+                aria-label="Go to client page"
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Clients
               </Link>
               <Link
                 href={"/contact"}
+                aria-label="Go to contact page"
                 className="bg-[#005A98] text-white px-4 py-3 rounded-xl font-carlito text-xl font-bold hover:bg-opacity-90 transition-all w-fit"
               >
                 Contact Us

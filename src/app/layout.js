@@ -1,22 +1,7 @@
-import { Roboto } from "next/font/google";
-import { Bruno_Ace_SC } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import { jsonLd } from "@/utils/jsonLD";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-roboto",
-  display: "swap",
-});
-
-const brunoAce = Bruno_Ace_SC({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-bruno",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Brand and Brandz - Premium Marketing Solutions",
@@ -59,7 +44,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${roboto.variable} ${brunoAce.variable}`}>
+      <body>
         {children}
         <ToastContainer
           position="bottom-left"

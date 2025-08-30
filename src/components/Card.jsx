@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Lightbulb, Rocket, Trophy } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";

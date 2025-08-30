@@ -8,10 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* 👇 Use these directly from Next.js injected font variables */
-  --font-sans: var(--font-roboto);
-  --font-bruno: var(--font-bruno);
 }
 
 @media (prefers-color-scheme: dark) {

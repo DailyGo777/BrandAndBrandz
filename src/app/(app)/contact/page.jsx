@@ -205,6 +205,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
+                    aria-label="Contact Us"
                     className={`w-full px-6 py-3 rounded-md font-roboto text-lg font-semibold flex items-center justify-center gap-4 cursor-pointer transition-all 
                               ${
                                 loading

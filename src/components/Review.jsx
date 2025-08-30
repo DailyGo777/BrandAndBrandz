@@ -99,6 +99,7 @@ const Review = () => {
                     ? "w-8 h-3 bg-[#005A98]"
                     : "w-3 h-3 bg-gray-300"
                 }`}
+                aria-label="Current Slide"
               />
             ))}
           </div>
