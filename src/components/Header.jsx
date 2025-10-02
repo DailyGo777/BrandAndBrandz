@@ -58,6 +58,13 @@ const Header = () => {
               Clients
             </Link>
             <Link
+              href={"/career"}
+              aria-label="Go to career page"
+              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
+            >
+              Career
+            </Link>
+            <Link
               href={"/contact"}
               aria-label="Go to contact page"
               className="bg-[#005A98] text-white px-4 py-3.5 rounded-xl font-carlito text-2xl font-bold hover:bg-opacity-90 transition-all"
@@ -114,6 +121,13 @@ const Header = () => {
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Clients
+              </Link>
+              <Link
+                href={"/career"}
+                aria-label="Go to career page"
+                className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
+              >
+                Career
               </Link>
               <Link
                 href={"/contact"}

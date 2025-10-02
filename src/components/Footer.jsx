@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Image src={bandbLogo} alt="Brand and Brandz Logo" />
-            <p className="[font-family:var(--font-sans)] text-text-light text-lg leading-relaxed max-w-md">
+            <p className="[font-family:var(--font-sans)] text-white text-lg leading-relaxed max-w-md">
               Empowering brands with smart, scalable solutions.
               <br />
               Your trusted partner in creativity, strategy, and digital growth.
@@ -30,7 +30,7 @@ export default function Footer() {
                 href={"https://www.instagram.com/brandandbrandz_/?igsh=emZldnJiOG9nbGti#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-light hover:text-white transition-colors"
+                className="text-white hover:text-white transition-colors"
               >
                 <Instagram size={24} />
               </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
                 href={"https://www.linkedin.com/company/brandandbrandz/"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-light hover:text-white transition-colors"
+                className="text-white hover:text-white transition-colors"
               >
                 <Linkedin size={24} />
               </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   Branding
                 </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   Creative Design
                 </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   Website Design & Development
                 </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   IT Consulting
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   Digital Marketing
                 </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               <li>
                 <Link
                   href={"/service"}
-                  className="[font-family:var(--font-sans)] text-text-light text-base hover:text-white transition-colors"
+                  className="[font-family:var(--font-sans)] text-white text-base hover:text-white transition-colors"
                 >
                   Manpower Solution
                 </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
               {/* Phone */}
               <div className="flex items-center gap-4">
                 <Phone size={20} className="text-white flex-shrink-0" />
-                <span className="[font-family:var(--font-sans)] text-text-light text-base">
+                <span className="[font-family:var(--font-sans)] text-white text-base">
                   85500 00895 , 93538 57575
                 </span>
               </div>
@@ -119,7 +119,7 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-4">
                 <Mail size={20} className="text-white flex-shrink-0" />
-                <span className="[font-family:var(--font-sans)] text-text-light text-base">
+                <span className="[font-family:var(--font-sans)] text-white text-base">
                   contact@brandandbrandz.com{" "}
                 </span>
               </div>
@@ -127,7 +127,7 @@ export default function Footer() {
               {/* Address */}
               <div className="flex items-start gap-4">
                 <MapPin size={20} className="text-white flex-shrink-0 mt-0.5" />
-                <span className="[font-family:var(--font-sans)] text-text-light text-sm leading-5">
+                <span className="[font-family:var(--font-sans)] text-white text-sm leading-5">
                   1st floor, palmarcade, horamavu main road, kalkere, bengaluru
                   - 560043
                 </span>
@@ -140,27 +140,27 @@ export default function Footer() {
         <div className="border-t border-white pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             {/* Copyright */}
-            <p className="[font-family:var(--font-sans)] text-text-light text-base">
-              © 2025 NAMMURA TECH WORKFORCE PVT LTD. All rights reserved.{" "}
+            <p className="[font-family:var(--font-sans)] text-white text-base">
+              2025 NAMMURA TECH WORKFORCE PVT LTD. All rights reserved.{" "}
             </p>
 
             {/* Legal Links */}
             <div className="flex flex-wrap items-center gap-6">
               <Link
                 href={"/"}
-                className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
+                className="[font-family:var(--font-sans)] text-white text-sm hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href={"/"}
-                className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
+                className="[font-family:var(--font-sans)] text-white text-sm hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 href={"/"}
-                className="[font-family:var(--font-sans)] text-text-light text-sm hover:text-white transition-colors"
+                className="[font-family:var(--font-sans)] text-white text-sm hover:text-white transition-colors"
               >
                 Cookie Policy
               </Link>

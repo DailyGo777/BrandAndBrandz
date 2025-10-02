@@ -39,10 +39,10 @@ const page = () => {
       <main className="min-h-screen bg-white">
         <Header />
 
-        <section className="min-h-screen py-20 bg-gray-50">
+        <section className="bg-gray-50">
           {/* Hero Section */}
           <motion.div
-            className="w-full min-h-[60vh] flex justify-center items-center flex-col gap-8 px-4 pb-20"
+            className="w-full min-h-[calc(100vh-5rem)] flex justify-center items-center flex-col gap-8 px-4"
             ref={heroRef}
             variants={popUpVariant}
             initial="hidden"
