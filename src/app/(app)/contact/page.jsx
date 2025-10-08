@@ -5,12 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { contactFormSchema } from "@/utils/schemaValidation";
 import { useState } from "react";
 import { jsonLd } from "@/utils/jsonLD";
 import Script from "next/script";
+import api from "@/services/api";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -26,8 +26,8 @@ export default function Contact() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post(
-        "https://brandandbrandz-backend.onrender.com/api/contacts",
+      await api.post(
+        "/contacts",
         data,
         {
           timeout: 6000,
