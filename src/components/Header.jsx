@@ -44,13 +44,6 @@ const Header = () => {
               Services
             </Link>
             <Link
-              href={"/team"}
-              aria-label="Go to team page"
-              className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
-            >
-              Our Team
-            </Link>
-            <Link
               href={"/client"}
               aria-label="Go to client page"
               className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
@@ -107,13 +100,6 @@ const Header = () => {
                 className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
               >
                 Services
-              </Link>
-              <Link
-                href={"/team"}
-                aria-label="Go to team page"
-                className="font-carlito text-2xl text-[#1E1E1E] hover:text-[#005A98] transition-colors"
-              >
-                Our Team
               </Link>
               <Link
                 href={"/client"}
